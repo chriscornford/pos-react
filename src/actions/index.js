@@ -32,6 +32,27 @@ export const addToCart = productId => (dispatch, getState) => {
         dispatch(addToCartUnsafe(productId))
     }
 };
+
+export const checkout = products => (dispatch, getState) => {
+    const { cart } = getState();
+
+    dispatch({
+        type: 'CHECKOUT_REQUEST',
+        payload: { items: products },
+        meta: {
+            offline: {
+                effect: {
+                    url: API_URL + '/api/purchase',
+                    method: 'POST',
+                    body: JSON.stringify({ items: products })
+                },
+                commit: { type: 'CHECKOUT_REQUEST_SUCCESS' },
+                rollback: { type: 'CHECKOUT_REQUEST_FAILURE', meta: { cart } }
+            }
+        }
+    })
+};
+
 function succeedAlways() {
     return {
         type: 'SUCCEED_ALWAYS',
