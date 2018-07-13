@@ -20,6 +20,18 @@ function receiveProducts(json) {
     }
 }
 
+function addToCartUnsafe(productId) {
+    return {
+        type: 'ADD_TO_CART',
+        productId
+    }
+}
+
+export const addToCart = productId => (dispatch, getState) => {
+    if (getState().products.byId[productId].quantity > 0) {
+        dispatch(addToCartUnsafe(productId))
+    }
+};
 function succeedAlways() {
     return {
         type: 'SUCCEED_ALWAYS',
