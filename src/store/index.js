@@ -1,4 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux';
+import thunkMiddleware from 'redux-thunk'
 import { offline } from '@redux-offline/redux-offline';
 import defaultConfig from '@redux-offline/redux-offline/lib/defaults';
 
@@ -31,7 +32,8 @@ export default createStore(
     composeEnhancers(
         offline(config),
         applyMiddleware(
-            tickMiddleware
+            tickMiddleware,
+            thunkMiddleware
         ),
     )
 );
