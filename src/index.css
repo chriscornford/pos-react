@@ -17,16 +17,3 @@ body {
     width: 80%;
     margin: 0 10%;
 }
-
-.promise-box {
-    width: 450px;
-    overflow: auto;
-}
-
-.promise-box.success > code {
-    color: #1cbc51;
-}
-
-.promise-box.error > code {
-    color: #b11f0b;
-}
