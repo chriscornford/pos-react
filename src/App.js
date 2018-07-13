@@ -1,14 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Containers
+import ProductsContainer from './containers/ProductsContainer';
+import CartContainer from './containers/CartContainer';
+
+// Components
 import MakeRequests from './components/MakeRequests';
 import RequestsQueue from './components/RequestsQueue';
 import SyncStatus from './components/SyncStatus';
 
-import ProductsContainer from './containers/ProductsContainer';
-import CartContainer from './containers/CartContainer';
-
+// Actions
 import { fetchProducts } from './actions';
+
+// Reducers
 import { getVisibleProducts } from './reducers/products'
 
 class App extends React.Component {
@@ -40,4 +45,7 @@ const mapDispatchToProps = {
     fetchProducts,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);

@@ -3,6 +3,7 @@ import thunkMiddleware from 'redux-thunk'
 import { offline } from '@redux-offline/redux-offline';
 import defaultConfig from '@redux-offline/redux-offline/lib/defaults';
 
+// Reducers
 import rootReducer from '../reducers'
 
 const config = {

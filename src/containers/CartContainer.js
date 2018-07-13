@@ -1,8 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { checkout } from '../actions'
-import { getTotal, getCartProducts } from '../reducers'
+
+// Components
 import Cart from '../components/Cart'
+
+// Actions
+import { checkout } from '../actions'
+
+// Reducers
+import { getTotal, getCartProducts } from '../reducers'
 
 const CartContainer = ({ products, total, checkout }) => (
     <Cart
