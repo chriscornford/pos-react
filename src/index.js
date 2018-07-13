@@ -7,6 +7,8 @@ import store from './store';
 
 import registerServiceWorker from './registerServiceWorker';
 
+import './index.css';
+
 render(
     <Provider store={store}>
         <App />
