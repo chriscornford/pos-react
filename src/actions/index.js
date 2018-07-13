@@ -1,6 +1,8 @@
+import { API_URL } from "../config";
+
 function fetchProducts() {
     return function (dispatch) {
-        return fetch('http://pos-laravel-api.test/api/product')
+        return fetch(API_URL + '/api/product')
             .then(
                 response => response.json(),
                 error => console.log('An error occurred.', error)
