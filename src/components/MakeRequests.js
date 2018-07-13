@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+// Actions
 import { succeedAlways } from '../actions';
 
 class MakeRequests extends React.Component {
@@ -13,7 +15,7 @@ class MakeRequests extends React.Component {
             return result;
         }
         return result.then(successCallback).catch(errorCallback);
-    }
+    };
 
     onSucceedAlways = () => this.buildHandler(this.props.onSucceedAlways)
 

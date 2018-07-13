@@ -1,6 +1,7 @@
 import React from 'react'
-import Product from './Product'
 
+// Components
+import Product from './Product'
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
     const hasProducts = products.length > 0;

@@ -1,4 +1,6 @@
 import React from 'react'
+
+// Components
 import Product from './Product'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
@@ -13,7 +15,6 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
             {product.quantity > 0 ? 'Add to cart' : 'Sold Out'}
         </button>
     </div>
-)
-
+);
 
 export default ProductItem
